@@ -30,7 +30,6 @@
         .nav-links a { color: var(--white); text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
-        /* Burger Menu für iPad/Mobile */
         .burger { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
         .burger div { width: 30px; height: 2px; background: var(--white); transition: 0.3s; }
 
@@ -62,7 +61,7 @@
         .overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; }
         .overlay h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 5px; }
 
-        /* Pricing - NOCH BESSER */
+        /* Pricing */
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .price-card { background: var(--card); padding: 60px 40px; border: 1px solid #222; transition: 0.4s; position: relative; }
         .price-card:hover { border-color: var(--primary); }
@@ -82,17 +81,19 @@
         .contact-box { background: var(--card); padding: 60px; border: 1px solid #222; max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
         .contact-info h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary); }
         input, select, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: #fff; font-family: inherit; font-size: 1rem; }
+        
+        /* Button Styles */
         .btn { background: var(--primary); color: var(--dark); padding: 20px 40px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; width: 100%; transition: 0.3s; text-align: center; text-decoration: none; display: block; }
         .btn:hover { background: var(--white); transform: translateY(-3px); }
 
         footer { padding: 80px 8% 40px; text-align: center; color: var(--gray); font-size: 0.8rem; letter-spacing: 2px; }
 
-        /* Media Queries iPad */
+        /* Media Queries */
         @media (max-width: 950px) {
             .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--dark); flex-direction: column; padding: 40px; text-align: center; border-bottom: 1px solid #222; }
             .nav-links.active { display: flex; }
             .burger { display: flex; }
-            .contact-box { grid-template-columns: 1fr; }
+            .contact-box { grid-template-columns: 1fr; padding: 30px; }
             .price-card.featured { transform: scale(1); }
         }
 
@@ -134,7 +135,7 @@
 
         <div class="portfolio-grid">
             <div class="portfolio-item video">
-                <video autoplay muted loop><source src="https://assets.mixkit.co/videos/preview/mixkit-pouring-red-wine-into-a-glass-in-slow-motion-4286-large.mp4" type="video/mp4"></video>
+                <video autoplay muted loop playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-pouring-red-wine-into-a-glass-in-slow-motion-4286-large.mp4" type="video/mp4"></video>
                 <div class="overlay"><h4>Cinematic Experience</h4><p>High-End Content für den Wow-Effekt.</p></div>
             </div>
             <div class="portfolio-item photo">
@@ -142,7 +143,7 @@
                 <div class="overlay"><h4>Premium Branding</h4><p>Wir machen dein Food zur Legende.</p></div>
             </div>
             <div class="portfolio-item video">
-                <video autoplay muted loop><source src="https://assets.mixkit.co/videos/preview/mixkit-chef-preparing-a-fresh-salad-4632-large.mp4" type="video/mp4"></video>
+                <video autoplay muted loop playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-chef-preparing-a-fresh-salad-4632-large.mp4" type="video/mp4"></video>
                 <div class="overlay"><h4>Kitchen Stories</h4><p>Vertrauen schaffen durch echte Insights.</p></div>
             </div>
         </div>
@@ -197,22 +198,29 @@
         </div>
     </section>
 
-<form action="https://formspree.io/f/mgonvwln" method="POST">
-    <input type="text" name="Restaurant_Name" placeholder="Restaurant Name" required style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
-    
-    <input type="email" name="Email_Adresse" placeholder="E-Mail Adresse" required style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
-    
-    <select name="Paket_Auswahl" style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
-        <option value="table-booster">Table Booster</option>
-        <option value="full-service">Full Service</option>
-        <option value="individuell">Individuell (Social Media & Ads)</option>
-    </select>
-    
-    <textarea name="Herausforderung" rows="4" placeholder="Deine größte Herausforderung (z.B. zu wenig Gäste unter der Woche)..." required style="width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
-    
-    <button type="submit" style="width: 100%; padding: 15px; background-color: #ffcc00; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Jetzt Gratis-Gespräch anfordern</button>
-</form>
-
+    <section id="kontakt">
+        <div class="contact-box">
+            <div class="contact-info">
+                <h2>Lass uns <span>ausbuchen.</span></h2>
+                <p>Wir analysieren dein Potenzial und zeigen dir genau, wie wir dein Restaurant zum Hotspot machen. Komplett unverbindlich.</p>
+                <p style="margin-top: 20px; font-weight: 700; color: var(--white);">ELEVATE MARKETING</p>
+                <p style="color: var(--gray);">Premium Solutions for Premium Gastro.</p>
+            </div>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/mgonvwln" method="POST">
+                    <input type="text" name="Restaurant" placeholder="Restaurant Name" required>
+                    <input type="email" name="Email" placeholder="E-Mail Adresse" required>
+                    <select name="Paket">
+                        <option value="Table Booster">Table Booster (Der Bestseller)</option>
+                        <option value="Local Presence">Local Presence</option>
+                        <option value="Full House">Full House (Das Maximum)</option>
+                    </select>
+                    <textarea name="Nachricht" rows="4" placeholder="Was ist deine größte Herausforderung?"></textarea>
+                    <button type="submit" class="btn">Gratis Gespräch anfordern</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <a href="#" class="logo" style="font-size: 1rem;">ELEVATE<span>MARKETING</span></a><br><br>
@@ -236,7 +244,7 @@
             for (var j = 0; j < btns.length; j++) {
                 btns[j].classList.remove("active");
             }
-            event.currentTarget.classList.add("active");
+            if(event) event.currentTarget.classList.add("active");
         }
     </script>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevate Marketing | Wir füllen deine Tische</title>
+    <title>Elevate Marketing | Premium Gastro Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
@@ -16,137 +16,163 @@
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--white); line-height: 1.6; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--white); line-height: 1.6; scroll-behavior: smooth; overflow-x: hidden; }
 
         /* Navigation */
         header { 
-            padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; 
-            background: rgba(10, 10, 10, 0.98); position: sticky; top: 0; z-index: 3000; border-bottom: 1px solid #222;
+            padding: 1.5rem 8%; display: flex; justify-content: space-between; align-items: center; 
+            background: rgba(10, 10, 10, 0.95); position: sticky; top: 0; z-index: 3000; border-bottom: 1px solid #222;
         }
-        .logo { font-weight: 900; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 3px; color: var(--white); text-decoration: none; }
+        .logo { font-weight: 900; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--white); text-decoration: none; }
         .logo span { color: var(--primary); }
-
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: var(--white); text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
 
         /* Hero Section */
         .hero { 
-            height: 95vh; display: flex; flex-direction: column; justify-content: center; 
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; 
             align-items: center; text-align: center; padding: 0 10%;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1500&q=80');
             background-size: cover; background-position: center;
         }
-        .hero h1 { font-size: clamp(2.8rem, 8vw, 6rem); font-weight: 900; line-height: 1; margin-bottom: 20px; text-transform: uppercase; }
+        .hero h1 { font-size: clamp(3rem, 10vw, 6.5rem); font-weight: 900; line-height: 1; margin-bottom: 25px; text-transform: uppercase; }
         .hero h1 span { color: var(--primary); }
-        .hero p { font-size: clamp(1rem, 3vw, 1.4rem); max-width: 800px; margin-bottom: 40px; color: #ccc; }
+        .hero p { font-size: clamp(1.1rem, 3vw, 1.5rem); max-width: 900px; margin-bottom: 45px; color: #ddd; font-weight: 400; }
 
-        /* Sections */
-        section { padding: 120px 8%; }
-        .section-tag { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 10px; text-align: center; }
-        .section-title { font-size: 3rem; text-align: center; margin-bottom: 60px; font-weight: 900; text-transform: uppercase; }
+        .btn { background: var(--primary); color: var(--dark); padding: 22px 45px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; letter-spacing: 1px; }
+        .btn:hover { background: var(--white); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+
+        /* Sections General */
+        section { padding: 140px 8%; }
+        .section-tag { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 4px; display: block; margin-bottom: 15px; text-align: center; }
+        .section-title { font-size: clamp(2.5rem, 5vw, 4rem); text-align: center; margin-bottom: 70px; font-weight: 900; text-transform: uppercase; }
 
         /* Portfolio Grid */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .portfolio-item { height: 500px; position: relative; overflow: hidden; border-radius: 4px; background: #000; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
+        .portfolio-item { height: 600px; position: relative; overflow: hidden; border-radius: 4px; border: 1px solid #222; background: #000; }
         
-        /* YouTube Video Container */
-        .video-container { width: 100%; height: 100%; position: relative; overflow: hidden; }
-        .video-container iframe { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            pointer-events: none; transform: scale(1.1); /* Zoom um Ränder zu vermeiden */
+        .video-container { width: 100%; height: 100%; position: relative; }
+        .video-container iframe { position: absolute; top:0; left:0; width:100%; height:100%; pointer-events: none; transform: scale(1.05); }
+
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.95)); padding: 35px; display: flex; flex-direction: column; justify-content: flex-end; }
+        .overlay h4 { color: var(--primary); font-size: 1.4rem; text-transform: uppercase; margin-bottom: 8px; }
+
+        /* Investment / Pakete */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
+        .price-card { background: var(--card); padding: 70px 45px; border: 1px solid #222; transition: 0.4s; position: relative; display: flex; flex-direction: column; }
+        .price-card.featured { border: 2px solid var(--primary); transform: scale(1.05); z-index: 10; background: #161616; }
+        .price-card h3 { font-size: 2rem; margin-bottom: 15px; text-transform: uppercase; }
+        .price-card .price { font-size: 3.5rem; font-weight: 900; color: var(--primary); margin-bottom: 30px; }
+        .price-card ul { list-style: none; margin-bottom: 40px; flex-grow: 1; }
+        .price-card ul li { padding: 12px 0; border-bottom: 1px solid #222; color: #ccc; font-size: 0.95rem; }
+        .price-card ul li::before { content: "✓ "; color: var(--primary); font-weight: bold; }
+
+        /* Kontakt Formular */
+        .contact-box { background: var(--card); padding: 80px; border: 1px solid #222; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+        .contact-info h2 { font-size: 3.5rem; text-transform: uppercase; line-height: 1; margin-bottom: 20px; }
+        .contact-info h2 span { color: var(--primary); }
+        
+        input, select, textarea { width: 100%; padding: 20px; margin-bottom: 20px; background: #000; border: 1px solid #333; color: #fff; font-family: 'Inter', sans-serif; font-size: 1rem; }
+        input:focus, select:focus, textarea:focus { border-color: var(--primary); outline: none; }
+
+        @media (max-width: 1000px) {
+            .contact-box { grid-template-columns: 1fr; padding: 50px 30px; }
+            .price-card.featured { transform: scale(1); }
         }
 
-        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-        .overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 10; }
-        .overlay h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 5px; }
-
-        /* Pricing */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .price-card { background: var(--card); padding: 60px 40px; border: 1px solid #222; transition: 0.4s; position: relative; }
-        .price-card.featured { border: 2px solid var(--primary); transform: scale(1.05); }
-        .price-card h3 { font-size: 1.8rem; margin-bottom: 10px; }
-        .price-card .price { font-size: 3rem; font-weight: 900; color: var(--primary); margin-bottom: 10px; }
-        
-        /* Contact Form */
-        .contact-box { background: var(--card); padding: 60px; border: 1px solid #222; max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: #fff; font-family: inherit; }
-        .btn { background: var(--primary); color: var(--dark); padding: 20px 40px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; text-align: center; text-decoration: none; display: block; transition: 0.3s; }
-        .btn:hover { background: var(--white); transform: translateY(-3px); }
-
-        footer { padding: 60px 8%; text-align: center; color: var(--gray); font-size: 0.8rem; letter-spacing: 2px; }
+        footer { padding: 80px 8% 40px; text-align: center; color: var(--gray); font-size: 0.8rem; letter-spacing: 3px; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
     <header>
         <a href="#" class="logo">ELEVATE<span>MARKETING</span></a>
-        <nav class="nav-links">
-            <a href="#portfolio">Ergebnisse</a>
-            <a href="#pakete">Investment</a>
-            <a href="#kontakt">Gratis Strategie</a>
-        </nav>
+        <a href="#kontakt" class="btn" style="padding: 12px 25px; font-size: 0.8rem;">Analyse sichern</a>
     </header>
 
     <section class="hero">
-        <p style="color: var(--primary); font-weight: 700; letter-spacing: 4px; margin-bottom: 10px;">PREMIUM GASTRO MARKETING</p>
+        <p style="color: var(--primary); font-weight: 700; letter-spacing: 5px; margin-bottom: 15px; text-transform: uppercase;">Premium Agency</p>
         <h1>Wir füllen deine <span>Tische.</span></h1>
-        <p>Wir produzieren Cinematic Reels und Performance-Kampagnen, die dein Restaurant zur Nr. 1 machen.</p>
-        <a href="#kontakt" class="btn">Gratis Analyse sichern</a>
+        <p>Wir produzieren Cinematic Content und schalten Performance-Ads, die dein Restaurant zur Nr. 1 in deiner Stadt machen.</p>
+        <a href="#kontakt" class="btn">Jetzt anfragen</a>
     </section>
 
     <section id="portfolio">
         <span class="section-tag">Showcase</span>
-        <h2 class="section-title">Dein Vibe, unser Content</h2>
+        <h2 class="section-title">Ergebnisse, die man schmeckt</h2>
         
         <div class="portfolio-grid">
             <div class="portfolio-item">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/https://youtube.com/shorts/1f2bHkFf60Q?is=aGXDNzAXLiQ6uARa?autoplay=1&mute=1&loop=1&playlist=https://youtube.com/shorts/1f2bHkFf60Q?is=aGXDNzAXLiQ6uARa&controls=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay"></iframe>
+                    <iframe src="https://www.youtube.com/embed/https://youtube.com/shorts/1f2bHkFf60Q?is=aGXDNzAXLiQ6uARa?autoplay=1&mute=1&loop=1&playlist=https://youtube.com/shorts/1f2bHkFf60Q?is=aGXDNzAXLiQ6uARa&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay"></iframe>
                 </div>
-                <div class="overlay"><h4>Cinematic Reel</h4><p>High-End Video</p></div>
+                <div class="overlay"><h4>Cinematic Reel</h4><p>High-End Production</p></div>
             </div>
 
             <div class="portfolio-item">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/https://youtube.com/shorts/hH5XEczDVRw?is=mzkuR_kjqaAUKkeI?autoplay=1&mute=1&loop=1&playlist=https://youtube.com/shorts/hH5XEczDVRw?is=mzkuR_kjqaAUKkeI&controls=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay"></iframe>
+                    <iframe src="https://www.youtube.com/embed/https://youtube.com/shorts/hH5XEczDVRw?is=mzkuR_kjqaAUKkeI?autoplay=1&mute=1&loop=1&playlist=https://youtube.com/shorts/hH5XEczDVRw?is=mzkuR_kjqaAUKkeI&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay"></iframe>
                 </div>
                 <div class="overlay"><h4>Kitchen Magic</h4><p>Food in Motion</p></div>
             </div>
 
             <div class="portfolio-item">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/https://youtube.com/shorts/jns4Ptg7hzM?is=Z1Bx9BNppEAOsBzA?autoplay=1&mute=1&loop=1&playlist=https://youtube.com/shorts/jns4Ptg7hzM?is=Z1Bx9BNppEAOsBzA&controls=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay"></iframe>
+                    <iframe src="https://www.youtube.com/embed/https://youtube.com/shorts/jns4Ptg7hzM?is=Z1Bx9BNppEAOsBzA?autoplay=1&mute=1&loop=1&playlist=https://youtube.com/shorts/jns4Ptg7hzM?is=Z1Bx9BNppEAOsBzA&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay"></iframe>
                 </div>
-                <div class="overlay"><h4>Atmosphere</h4><p>Der Vibe deines Ladens</p></div>
+                <div class="overlay"><h4>Atmosphere</h4><p>Dein Vibe</p></div>
             </div>
 
             <div class="portfolio-item">
-                <img src="https://https://i.postimg.cc/cHR8TJYL/Cocktail-foto.png" alt="Restaurant Foto">
-                <div class="overlay"><h4>Premium Branding</h4><p>Authentische Shots</p></div>
+                <img src="http://i.postimg.cc/cHR8TJYL/Cocktail-foto.png" alt="Gastro">
+                <div class="overlay"><h4>Premium Branding</h4></div>
             </div>
-
             <div class="portfolio-item">
-                <img src="https://i.postimg.cc/MT2QyBcv/A18E2366-0381-490F-84D4-252A52EBB00F.png" alt="Restaurant Foto">
-                <div class="overlay"><h4>Interior Design</h4><p>Wohlfühl-Atmosphäre</p></div>
+                <img src="http://i.postimg.cc/MT2QyBcv/A18E2366-0381-490F-84D4-252A52EBB00F.png" alt="Gastro">
+                <div class="overlay"><h4>Interior</h4></div>
             </div>
-
             <div class="portfolio-item">
-                <img src="https://i.postimg.cc/JnhJP8rh/D16510B5-0F36-4385-A262-FEFF6DE760A9.png" alt="Restaurant Foto">
-                <div class="overlay"><h4>Food Photography</h4><p>Der Wow-Effekt</p></div>
+                <img src="http://i.postimg.cc/JnhJP8rh/D16510B5-0F36-4385-A262-FEFF6DE760A9.png" alt="Gastro">
+                <div class="overlay"><h4>Food Photography</h4></div>
             </div>
         </div>
     </section>
 
     <section id="pakete">
         <span class="section-tag">Investment</span>
-        <h2 class="section-title">Wähle dein Paket</h2>
+        <h2 class="section-title">Wähle dein Wachstum</h2>
         <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Essential</h3>
+                <div class="price">999€<span style="font-size: 1rem; color: #666;">/mtl.</span></div>
+                <ul>
+                    <li>4x Cinematic Reels</li>
+                    <li>Basic Meta Ads</li>
+                    <li>Strategie-Call</li>
+                </ul>
+                <a href="#kontakt" class="btn">Wählen</a>
+            </div>
             <div class="price-card featured">
+                <div style="position: absolute; top: 20px; right: 20px; background: var(--primary); color: #000; padding: 5px 15px; font-size: 0.7rem; font-weight: 900;">POPULÄR</div>
                 <h3>Table Booster</h3>
-                <div class="price">1.999€<span>/mtl.</span></div>
-                <p style="margin-bottom: 20px; color: var(--gray);">Alles was du brauchst, um ausgebucht zu sein.</p>
-                <a href="#kontakt" class="btn">Jetzt anfragen</a>
+                <div class="price">1.999€<span style="font-size: 1rem; color: #666;">/mtl.</span></div>
+                <ul>
+                    <li>8x Cinematic Reels</li>
+                    <li>Performance Ads</li>
+                    <li>Profi Fotoshooting</li>
+                    <li>Full Management</li>
+                </ul>
+                <a href="#kontakt" class="btn">Wählen</a>
+            </div>
+            <div class="price-card">
+                <h3>Full House</h3>
+                <div class="price">3.499€<span style="font-size: 1rem; color: #666;">/mtl.</span></div>
+                <ul>
+                    <li>12x Cinematic Reels</li>
+                    <li>Premium Ad Strategy</li>
+                    <li>Social Media Management</li>
+                    <li>VIP Support</li>
+                </ul>
+                <a href="#kontakt" class="btn">Wählen</a>
             </div>
         </div>
     </section>
@@ -155,14 +181,19 @@
         <div class="contact-box">
             <div class="contact-info">
                 <h2>Lass uns <span>ausbuchen.</span></h2>
-                <p>Kostenlose Analyse deines Potenzials.</p>
+                <p>Sende uns eine Anfrage und wir analysieren dein Potenzial innerhalb von 24h.</p>
             </div>
             <div class="contact-form">
-                <form action="https://formspree.io/f/HIER_DEINE_ID" method="POST">
-                    <input type="text" name="Restaurant" placeholder="Restaurant Name" required>
-                    <input type="email" name="Email" placeholder="E-Mail Adresse" required>
-                    <textarea name="Nachricht" rows="4" placeholder="Deine größte Herausforderung?"></textarea>
-                    <button type="submit" class="btn" style="width: 100%;">Nachricht senden</button>
+                <form action="https://formspree.io/f/mgonvwln" method="POST">
+                    <input type="text" name="Restaurant" placeholder="Name deines Restaurants" required>
+                    <input type="email" name="Email" placeholder="Deine E-Mail Adresse" required>
+                    <select name="Interesse">
+                        <option value="Essential">Essential (999€)</option>
+                        <option value="Table Booster" selected>Table Booster (1.999€)</option>
+                        <option value="Full House">Full House (3.499€)</option>
+                    </select>
+                    <textarea name="Nachricht" rows="4" placeholder="Was ist deine größte Herausforderung?"></textarea>
+                    <button type="submit" class="btn" style="width: 100%;">Anfrage abschicken</button>
                 </form>
             </div>
         </div>

@@ -30,9 +30,6 @@
         .nav-links a { color: var(--white); text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
-        .burger { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
-        .burger div { width: 30px; height: 2px; background: var(--white); transition: 0.3s; }
-
         /* Hero Section */
         .hero { 
             height: 95vh; display: flex; flex-direction: column; justify-content: center; 
@@ -49,151 +46,107 @@
         .section-tag { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 10px; text-align: center; }
         .section-title { font-size: 3rem; text-align: center; margin-bottom: 60px; font-weight: 900; text-transform: uppercase; }
 
-        /* Portfolio */
-        .portfolio-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
-        .tab-btn { background: transparent; border: 1px solid #333; color: var(--white); padding: 12px 25px; cursor: pointer; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
-        .tab-btn.active { background: var(--primary); color: var(--dark); border-color: var(--primary); }
-
+        /* Portfolio Grid */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .portfolio-item { height: 450px; position: relative; overflow: hidden; border-radius: 4px; }
-        .portfolio-item video, .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-        .portfolio-item:hover video, .portfolio-item:hover img { transform: scale(1.05); }
-        .overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; }
+        .portfolio-item { height: 500px; position: relative; overflow: hidden; border-radius: 4px; background: #000; }
+        
+        /* YouTube Video Container */
+        .video-container { width: 100%; height: 100%; position: relative; overflow: hidden; }
+        .video-container iframe { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            pointer-events: none; transform: scale(1.1); /* Zoom um Ränder zu vermeiden */
+        }
+
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 10; }
         .overlay h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 5px; }
 
         /* Pricing */
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .price-card { background: var(--card); padding: 60px 40px; border: 1px solid #222; transition: 0.4s; position: relative; }
-        .price-card:hover { border-color: var(--primary); }
-        .price-card.featured { border: 2px solid var(--primary); transform: scale(1.05); z-index: 2; }
-        .featured-tag { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: var(--primary); color: var(--dark); padding: 5px 20px; font-weight: 900; font-size: 0.7rem; text-transform: uppercase; }
-
+        .price-card.featured { border: 2px solid var(--primary); transform: scale(1.05); }
         .price-card h3 { font-size: 1.8rem; margin-bottom: 10px; }
         .price-card .price { font-size: 3rem; font-weight: 900; color: var(--primary); margin-bottom: 10px; }
-        .price-card .price span { font-size: 1rem; color: var(--gray); }
-        .price-card .description { color: var(--gray); margin-bottom: 30px; height: 50px; }
         
-        .feature-list { list-style: none; margin-bottom: 40px; }
-        .feature-list li { padding: 10px 0; border-bottom: 1px solid #222; display: flex; justify-content: space-between; font-size: 0.9rem; }
-        .feature-list li span { color: var(--primary); font-weight: 700; }
-
         /* Contact Form */
         .contact-box { background: var(--card); padding: 60px; border: 1px solid #222; max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        .contact-info h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary); }
-        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: #fff; font-family: inherit; font-size: 1rem; }
-        
-        /* Button Styles */
-        .btn { background: var(--primary); color: var(--dark); padding: 20px 40px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; width: 100%; transition: 0.3s; text-align: center; text-decoration: none; display: block; }
+        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: #fff; font-family: inherit; }
+        .btn { background: var(--primary); color: var(--dark); padding: 20px 40px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; text-align: center; text-decoration: none; display: block; transition: 0.3s; }
         .btn:hover { background: var(--white); transform: translateY(-3px); }
 
-        footer { padding: 80px 8% 40px; text-align: center; color: var(--gray); font-size: 0.8rem; letter-spacing: 2px; }
-
-        /* Media Queries */
-        @media (max-width: 950px) {
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--dark); flex-direction: column; padding: 40px; text-align: center; border-bottom: 1px solid #222; }
-            .nav-links.active { display: flex; }
-            .burger { display: flex; }
-            .contact-box { grid-template-columns: 1fr; padding: 30px; }
-            .price-card.featured { transform: scale(1); }
-        }
-
-        .hidden { display: none; }
+        footer { padding: 60px 8%; text-align: center; color: var(--gray); font-size: 0.8rem; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
     <header>
         <a href="#" class="logo">ELEVATE<span>MARKETING</span></a>
-        <div class="burger" onclick="toggleMenu()">
-            <div></div><div></div><div></div>
-        </div>
-        <nav class="nav-links" id="navLinks">
-            <a href="#portfolio" onclick="toggleMenu()">Ergebnisse</a>
-            <a href="#pakete" onclick="toggleMenu()">Investment</a>
-            <a href="#kontakt" onclick="toggleMenu()">Gratis Strategie</a>
+        <nav class="nav-links">
+            <a href="#portfolio">Ergebnisse</a>
+            <a href="#pakete">Investment</a>
+            <a href="#kontakt">Gratis Strategie</a>
         </nav>
     </header>
 
     <section class="hero">
         <p style="color: var(--primary); font-weight: 700; letter-spacing: 4px; margin-bottom: 10px;">PREMIUM GASTRO MARKETING</p>
         <h1>Wir füllen deine <span>Tische.</span></h1>
-        <p>Vergiss langweilige Posts. Wir produzieren Cinematic Reels und Performance-Kampagnen, die dein Restaurant zur Nr. 1 in deiner Stadt machen.</p>
-        <div style="display: flex; gap: 20px;">
-            <a href="#kontakt" class="btn">Gratis Analyse sichern</a>
-        </div>
+        <p>Wir produzieren Cinematic Reels und Performance-Kampagnen, die dein Restaurant zur Nr. 1 machen.</p>
+        <a href="#kontakt" class="btn">Gratis Analyse sichern</a>
     </section>
 
     <section id="portfolio">
         <span class="section-tag">Showcase</span>
         <h2 class="section-title">Dein Vibe, unser Content</h2>
         
-        <div class="portfolio-tabs">
-            <button class="tab-btn active" onclick="filterSelection('all')">Alles</button>
-            <button class="tab-btn" onclick="filterSelection('video')">Videos</button>
-            <button class="tab-btn" onclick="filterSelection('photo')">Photography</button>
-        </div>
-
         <div class="portfolio-grid">
-            <div class="portfolio-item video">
-                <video autoplay muted loop playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-pouring-red-wine-into-a-glass-in-slow-motion-4286-large.mp4" type="video/mp4"></video>
-                <div class="overlay"><h4>Cinematic Experience</h4><p>High-End Content für den Wow-Effekt.</p></div>
+            <div class="portfolio-item">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/https://youtube.com/shorts/1f2bHkFf60Q?is=aGXDNzAXLiQ6uARa?autoplay=1&mute=1&loop=1&playlist=https://youtube.com/shorts/1f2bHkFf60Q?is=aGXDNzAXLiQ6uARa&controls=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay"></iframe>
+                </div>
+                <div class="overlay"><h4>Cinematic Reel</h4><p>High-End Video</p></div>
             </div>
-            <div class="portfolio-item photo">
-                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800">
-                <div class="overlay"><h4>Premium Branding</h4><p>Wir machen dein Food zur Legende.</p></div>
+
+            <div class="portfolio-item">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/https://youtube.com/shorts/hH5XEczDVRw?is=mzkuR_kjqaAUKkeI?autoplay=1&mute=1&loop=1&playlist=https://youtube.com/shorts/hH5XEczDVRw?is=mzkuR_kjqaAUKkeI&controls=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay"></iframe>
+                </div>
+                <div class="overlay"><h4>Kitchen Magic</h4><p>Food in Motion</p></div>
             </div>
-            <div class="portfolio-item video">
-                <video autoplay muted loop playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-chef-preparing-a-fresh-salad-4632-large.mp4" type="video/mp4"></video>
-                <div class="overlay"><h4>Kitchen Stories</h4><p>Vertrauen schaffen durch echte Insights.</p></div>
+
+            <div class="portfolio-item">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/https://youtube.com/shorts/jns4Ptg7hzM?is=Z1Bx9BNppEAOsBzA?autoplay=1&mute=1&loop=1&playlist=https://youtube.com/shorts/jns4Ptg7hzM?is=Z1Bx9BNppEAOsBzA&controls=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay"></iframe>
+                </div>
+                <div class="overlay"><h4>Atmosphere</h4><p>Der Vibe deines Ladens</p></div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://i.postimg.cc/MT2QyBcv/A18E2366-0381-490F-84D4-252A52EBB00F.png" alt="Restaurant Foto">
+                <div class="overlay"><h4>Premium Branding</h4><p>Authentische Shots</p></div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://i.postimg.cc/MT2QyBcv/A18E2366-0381-490F-84D4-252A52EBB00F.png" alt="Restaurant Foto">
+                <div class="overlay"><h4>Interior Design</h4><p>Wohlfühl-Atmosphäre</p></div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://i.postimg.cc/JnhJP8rh/D16510B5-0F36-4385-A262-FEFF6DE760A9.png" alt="Restaurant Foto">
+                <div class="overlay"><h4>Food Photography</h4><p>Der Wow-Effekt</p></div>
             </div>
         </div>
     </section>
 
     <section id="pakete">
-        <span class="section-tag">Transparent</span>
-        <h2 class="section-title">Wähle deine Wachstums-Stufe</h2>
-        
+        <span class="section-tag">Investment</span>
+        <h2 class="section-title">Wähle dein Paket</h2>
         <div class="pricing-grid">
-            <div class="price-card">
-                <h3>Local Presence</h3>
-                <div class="price">999€<span>/mtl.</span></div>
-                <p class="description">Der Einstieg für Restaurants, die endlich professionell sichtbar sein wollen.</p>
-                <ul class="feature-list">
-                    <li>Cinematic Reels <span>4x</span></li>
-                    <li>Premium Feed Posts <span>8x</span></li>
-                    <li>Social Management <span>Inkl.</span></li>
-                    <li>Community Management <span>Inkl.</span></li>
-                </ul>
-                <a href="#kontakt" class="btn" style="background: transparent; border: 1px solid var(--primary); color: var(--primary);">Jetzt anfragen</a>
-            </div>
-
             <div class="price-card featured">
-                <div class="featured-tag">Meistgebucht</div>
                 <h3>Table Booster</h3>
                 <div class="price">1.999€<span>/mtl.</span></div>
-                <p class="description">Unsere All-in-One Lösung, um die Auslastung massiv zu erhöhen.</p>
-                <ul class="feature-list">
-                    <li>Cinematic Reels <span>6x</span></li>
-                    <li>Premium Feed Posts <span>12x</span></li>
-                    <li>Wöchentliche Storys <span>4x</span></li>
-                    <li>Performance Ads <span>Inkl.</span></li>
-                    <li>Monatliches Reporting <span>Inkl.</span></li>
-                </ul>
-                <a href="#kontakt" class="btn">Tische füllen</a>
-            </div>
-
-            <div class="price-card">
-                <h3>Full House</h3>
-                <div class="price">3.555€<span>/mtl.</span></div>
-                <p class="description">Das Maximum für Gastronomen, die den Markt dominieren wollen.</p>
-                <ul class="feature-list">
-                    <li>Cinematic Reels <span>10x</span></li>
-                    <li>Premium Feed Posts <span>15x</span></li>
-                    <li>Full Story Begleitung <span>Inkl.</span></li>
-                    <li>Influencer Marketing <span>Inkl.</span></li>
-                    <li>Strategie Call (Weekly) <span>Inkl.</span></li>
-                </ul>
-                <a href="#kontakt" class="btn" style="background: transparent; border: 1px solid var(--primary); color: var(--primary);">Dominanz starten</a>
+                <p style="margin-bottom: 20px; color: var(--gray);">Alles was du brauchst, um ausgebucht zu sein.</p>
+                <a href="#kontakt" class="btn">Jetzt anfragen</a>
             </div>
         </div>
     </section>
@@ -202,50 +155,22 @@
         <div class="contact-box">
             <div class="contact-info">
                 <h2>Lass uns <span>ausbuchen.</span></h2>
-                <p>Wir analysieren dein Potenzial und zeigen dir genau, wie wir dein Restaurant zum Hotspot machen. Komplett unverbindlich.</p>
-                <p style="margin-top: 20px; font-weight: 700; color: var(--white);">ELEVATE MARKETING</p>
-                <p style="color: var(--gray);">Premium Solutions for Premium Gastro.</p>
+                <p>Kostenlose Analyse deines Potenzials.</p>
             </div>
             <div class="contact-form">
-                <form action="https://formspree.io/f/mgonvwln" method="POST">
+                <form action="https://formspree.io/f/HIER_DEINE_ID" method="POST">
                     <input type="text" name="Restaurant" placeholder="Restaurant Name" required>
                     <input type="email" name="Email" placeholder="E-Mail Adresse" required>
-                    <select name="Paket">
-                        <option value="Table Booster">Table Booster (Der Bestseller)</option>
-                        <option value="Local Presence">Local Presence</option>
-                        <option value="Full House">Full House (Das Maximum)</option>
-                    </select>
-                    <textarea name="Nachricht" rows="4" placeholder="Was ist deine größte Herausforderung?"></textarea>
-                    <button type="submit" class="btn">Gratis Gespräch anfordern</button>
+                    <textarea name="Nachricht" rows="4" placeholder="Deine größte Herausforderung?"></textarea>
+                    <button type="submit" class="btn" style="width: 100%;">Nachricht senden</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <a href="#" class="logo" style="font-size: 1rem;">ELEVATE<span>MARKETING</span></a><br><br>
-        &copy; 2026 ELEVATE MARKETING SOLUTIONS | ALL RIGHTS RESERVED<br>
-        IMPRESSUM & DATENSCHUTZ
+        &copy; 2026 ELEVATE MARKETING | ALL RIGHTS RESERVED
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
-        }
-
-        function filterSelection(c) {
-            var x = document.getElementsByClassName("portfolio-item");
-            if (c == "all") c = "";
-            for (var i = 0; i < x.length; i++) {
-                x[i].classList.remove("hidden");
-                if (x[i].className.indexOf(c) <= -1) x[i].classList.add("hidden");
-            }
-            var btns = document.getElementsByClassName("tab-btn");
-            for (var j = 0; j < btns.length; j++) {
-                btns[j].classList.remove("active");
-            }
-            if(event) event.currentTarget.classList.add("active");
-        }
-    </script>
 </body>
 </html>

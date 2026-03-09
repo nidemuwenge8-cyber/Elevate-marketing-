@@ -17,7 +17,6 @@
         .logo { font-weight: 900; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 3px; color: var(--white); text-decoration: none; }
         .logo span { color: var(--primary); }
         
-        /* Navigation Links */
         nav a { color: var(--white); text-decoration: none; margin-left: 25px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
         nav a:hover { color: var(--primary); }
 
@@ -27,20 +26,21 @@
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1500&q=80');
             background-size: cover; background-position: center;
         }
-        .hero h1 { font-size: clamp(2.8rem, 8vw, 6rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
+        /* MEHR ABSTAND HIER */
+        .hero h1 { font-size: clamp(2.8rem, 8vw, 6rem); font-weight: 900; line-height: 1.1; margin-bottom: 60px; text-transform: uppercase; }
         .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.2rem; max-width: 800px; color: #ccc; margin-bottom: 40px; }
+        
         .btn { background: var(--primary); color: var(--dark); padding: 20px 40px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; }
 
         section { padding: 100px 8%; }
         .section-title { font-size: 3rem; text-align: center; margin-bottom: 60px; font-weight: 900; text-transform: uppercase; }
 
-        /* NEU: Über Uns Sektion */
         .about-section { background: var(--card); border-top: 1px solid #222; border-bottom: 1px solid #222; text-align: center; }
         .about-content { max-width: 900px; margin: 0 auto; }
         .about-content p { font-size: 1.3rem; color: var(--primary); font-weight: 700; margin-bottom: 20px; }
         .about-content span { color: var(--white); font-weight: 400; font-size: 1.1rem; display: block; }
 
-        /* SHOWCASE */
         .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .portfolio-item { height: 500px; position: relative; overflow: hidden; background: #000; border: 1px solid #222; }
         .video-container { width: 100%; height: 100%; position: relative; }
@@ -48,22 +48,19 @@
         .portfolio-item img { width: 100%; height: 100%; object-fit: cover; }
         .overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
 
-        /* PAKETE */
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .price-card { background: var(--card); padding: 40px 20px; border: 1px solid #222; text-align: center; transition: 0.3s; }
-        .price-card.featured { border: 2px solid var(--primary); transform: scale(1.05); }
-        .price-card .price { font-size: 2.5rem; font-weight: 900; color: var(--primary); margin-bottom: 20px; }
-        .price-card ul { list-style: none; color: #888; margin-bottom: 30px; text-align: left; padding: 0 20px; font-size: 0.9rem; }
+        /* NEUE PROBLEMLÖSER SEKTION STATT PREISE */
+        .strategy-box { background: var(--card); padding: 50px; border: 1px solid var(--primary); text-align: center; max-width: 1000px; margin: 0 auto; }
+        .strategy-box h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary); }
+        .strategy-box p { font-size: 1.1rem; margin-bottom: 30px; color: #ccc; }
 
-        /* KONTAKT */
         .contact-box { background: var(--card); padding: 60px; border: 1px solid #222; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; }
         .contact-text h2 { font-size: 2.5rem; text-transform: uppercase; color: var(--primary); margin-bottom: 15px; }
         .contact-text p { color: #ccc; margin-bottom: 20px; }
         input, select, textarea { width: 100%; padding: 18px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: #fff; font-family: inherit; }
         
         @media (max-width: 1000px) { 
-            .portfolio-grid, .pricing-grid, .contact-box { grid-template-columns: 1fr; }
-            nav { display: none; } /* Navigation am Handy ausblenden für Übersicht */
+            .portfolio-grid, .contact-box { grid-template-columns: 1fr; }
+            nav { display: none; }
         }
     </style>
 </head>
@@ -74,7 +71,7 @@
         <nav>
             <a href="#ueber-uns">Über uns</a>
             <a href="#portfolio">Leistungen</a>
-            <a href="#pakete">Pakete</a>
+            <a href="#beratung">Beratung</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
     </header>
@@ -88,13 +85,13 @@
     <section id="ueber-uns" class="about-section">
         <div class="about-content">
             <h2 class="section-title">Warum Elevate Marketing?</h2>
-            <p>Jahrelange Erfahrung & nachweisbare Erfolge.</p>
-            <span>Wir haben bereits zahlreichen Restaurants dabei geholfen, ihre Tische jeden Tag komplett auszubuchen. Durch unsere Expertise in Social Media, Google Maps Optimierung und gezielten Werbekampagnen machen wir dein Restaurant in deiner Stadt zur Nr. 1. Wir sorgen nicht nur für tolle Beiträge, sondern für echte Gäste und volle Kommunikation.</span>
+            <p>Probleme beheben & Tische füllen.</p>
+            <span>Wir sind darauf spezialisiert, die Schwachstellen in deinem Marketing zu finden und gezielt zu beheben. Egal ob zu wenig Neukunden, eine schwache Social Media Präsenz oder schlechte Google-Bewertungen – wir haben die Erfahrung aus zahlreichen Projekten, um dein Restaurant nachhaltig auszubuchen.</span>
         </div>
     </section>
 
     <section id="portfolio">
-        <h2 class="section-title">Unsere Leistungen</h2>
+        <h2 class="section-title">Unsere Ergebnisse</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item">
                 <div class="video-container">
@@ -120,27 +117,11 @@
         </div>
     </section>
 
-    <section id="pakete">
-        <h2 class="section-title">Unsere Pakete</h2>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <h3>Essential</h3>
-                <div class="price">999€</div>
-                <ul><li>4x Reels/Monat</li><li>Google Maps Support</li><li>Basic Ads</li></ul>
-                <a href="#kontakt" class="btn" style="width: 100%;">Wählen</a>
-            </div>
-            <div class="price-card featured">
-                <h3>Table Booster</h3>
-                <div class="price">1.999€</div>
-                <ul><li>8x Reels/Monat</li><li>Performance Ads</li><li>Profi-Fotos</li><li>Full Support</li></ul>
-                <a href="#kontakt" class="btn" style="width: 100%;">Wählen</a>
-            </div>
-            <div class="price-card">
-                <h3>Full House</h3>
-                <div class="price">3.499€</div>
-                <ul><li>12x Reels/Monat</li><li>VIP Betreuung</li><li>Full Management</li><li>Google Nr. 1</li></ul>
-                <a href="#kontakt" class="btn" style="width: 100%;">Wählen</a>
-            </div>
+    <section id="beratung">
+        <div class="strategy-box">
+            <h2>Kostenloses Erstgespräch</h2>
+            <p>Wir analysieren gemeinsam eure aktuelle Situation, identifizieren Sorgen und Probleme und entwickeln einen Plan für volle Tische und mehr Umsatz. Wir beheben, was euch aktuell zurückhält.</p>
+            <a href="#kontakt" class="btn">Strategie-Gespräch sichern</a>
         </div>
     </section>
 
@@ -149,18 +130,13 @@
             <div class="contact-text">
                 <h2>Lass uns dein Restaurant skalieren.</h2>
                 <p>Du willst volle Tische und eine starke Marke? Wir helfen dir dabei, ausgebucht zu sein und die Kommunikation mit deinen Gästen auf das nächste Level zu heben.</p>
-                <p>Trag dich jetzt ein und wir melden uns innerhalb von 24h bei dir für eine kostenlose Analyse.</p>
+                <p>Trag dich jetzt ein und wir melden uns innerhalb von 24h bei dir für eine kostenlose Beratung.</p>
             </div>
             <form action="https://formspree.io/f/mgonvwln" method="POST">
                 <input type="text" name="Restaurant" placeholder="Name des Restaurants" required>
                 <input type="email" name="Email" placeholder="Deine E-Mail Adresse" required>
-                <input type="tel" name="Phone" placeholder="Deine Telefonnummer (Pflichtfeld)" required>
-                <select name="Paket">
-                    <option value="Essential">Essential (999€)</option>
-                    <option value="Table Booster" selected>Table Booster (1.999€)</option>
-                    <option value="Full House">Full House (3.499€)</option>
-                </select>
-                <textarea name="Nachricht" rows="4" placeholder="Deine Nachricht an uns"></textarea>
+                <input type="tel" name="Phone" placeholder="Deine Telefonnummer" required>
+                <textarea name="Nachricht" rows="4" placeholder="Welches Problem sollen wir für dich lösen?"></textarea>
                 <button type="submit" class="btn" style="width: 100%;">Anfrage abschicken</button>
             </form>
         </div>

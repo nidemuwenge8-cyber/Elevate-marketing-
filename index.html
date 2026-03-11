@@ -137,53 +137,43 @@
                 <input type="email" name="Email" placeholder="Deine E-Mail Adresse" required>
                 <input type="tel" name="Phone" placeholder="Deine Telefonnummer" required>
                 <textarea name="Nachricht" rows="4" placeholder="Welches Problem sollen wir für dich lösen?"></textarea>
+                                                <div style="display: flex; align-items: flex-start; gap: 10px; margin: 20px 0; color: #777; font-size: 0.85rem; text-align: left;">
+                    <input type="checkbox" id="dsgvo" name="dsgvo_akzeptiert" required style="width: auto; margin-top: 3px; cursor: pointer;">
+                    <label for="dsgvo">Ich habe die Datenschutzbestimmungen gelesen und stimme der Verarbeitung meiner Daten zu.</label>
+                </div>
+
                 <button type="submit" class="btn" style="width: 100%;">Anfrage abschicken</button>
             </form>
-            <section id="legal-section" style="padding: 60px 8%; background: #0a0a0a; border-top: 1px solid #222; font-size: 0.85rem; color: #777; line-height: 1.6;">
-    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px;">
-        
-        <div id="datenschutz">
-            <h5 style="color: var(--primary); margin-bottom: 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Datenschutzerklärung</h5>
-            <p style="margin-bottom: 15px;">Der Schutz Ihrer persönlichen Daten ist uns wichtig. Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO).</p>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 60px 8%; background: #000; color: #444; font-size: 0.8rem; border-top: 1px solid #111;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <p style="margin-bottom: 30px; letter-spacing: 1px;">&copy; 2026 ELEVATE MARKETING</p>
             
-            <p><strong>Kontakt mit uns:</strong> Wenn Sie per Formular auf der Website oder per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten (Name, E-Mail-Adresse, Telefonnummer und Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-            <br>
-            <p><strong>Speicherdauer:</strong> Ihre Daten werden nur so lange gespeichert, wie dies für die Bearbeitung Ihrer Anfrage erforderlich ist.</p>
-            <br>
-            <p><strong>Ihre Rechte:</strong> Sie haben grundsätzlich das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerruf und Widerspruch. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, können Sie sich bei der Datenschutzbehörde beschweren.</p>
+            <details style="cursor: pointer; margin-bottom: 20px;">
+                <summary style="list-style: none; color: #d4af37; text-decoration: underline; font-weight: bold; letter-spacing: 1px;">IMPRESSUM ANZEIGEN</summary>
+                <div style="padding: 20px; text-align: left; color: #888; font-size: 0.8rem; background: #050505; border: 1px solid #222; margin-top: 15px; line-height: 1.6;">
+                    <strong>ELEVATE MARKETING</strong><br>
+                    Sandra Kaiblinger & Nide Muwenge<br>
+                    Landgutgasse 7, 1100 Wien, Österreich<br><br>
+                    <strong>Kontakt:</strong><br>
+                    E-Mail: <span style="color: #d4af37;">elevatemarketing.at@gmail.com</span><br>
+                    Tel: +43 677 62077896<br><br>
+                    <strong>Unternehmensgegenstand:</strong> Marketingagentur<br>
+                    <strong>Zuständige Behörde:</strong> Magistrat der Stadt Wien
+                </div>
+            </details>
+
+            <details style="cursor: pointer;">
+                <summary style="list-style: none; color: #d4af37; text-decoration: underline; font-weight: bold; letter-spacing: 1px;">DATENSCHUTZ ANZEIGEN</summary>
+                <div style="padding: 20px; text-align: left; color: #888; font-size: 0.8rem; background: #050505; border: 1px solid #222; margin-top: 15px; line-height: 1.6;">
+                    <strong>Datenschutzerklärung</strong><br>
+                    Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten (Name, E-Mail, Telefonnummer) ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO).<br><br>
+                    Wenn Sie uns per Formular kontaktieren, werden Ihre Angaben zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung und Widerruf zu.
+                </div>
+            </details>
         </div>
-
-        <div id="impressum">
-            <h5 style="color: var(--primary); margin-bottom: 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Impressum</h5>
-            <p><strong style="color: #fff; font-size: 1.1rem;">ELEVATE MARKETING</strong></p>
-            <p>Sandra Kaiblinger & Nide Muwenge</p>
-            <p>Landgutgasse 7</p>
-            <p>1100 Wien</p>
-            <p>Österreich</p>
-            <br>
-            <p><strong style="color: #fff;">Kontakt:</strong></p>
-            <p>E-Mail: <a href="mailto:elevatemarketing.at@gmail.com" style="color: var(--primary); text-decoration: none;">elevatemarketing.at@gmail.com</a></p>
-            <p>Tel: +43 677 62077896</p>
-            <br>
-            <p><strong>Unternehmensgegenstand:</strong> Marketingagentur</p>
-            <p><strong>Aufsichtsbehörde:</strong> Magistrat der Stadt Wien</p>
-            <p><strong>Berufsrecht:</strong> Gewerbeordnung (www.ris.bka.gv.at)</p>
-            <br>
-            <p style="font-size: 0.75rem; border-top: 1px solid #1a1a1a; padding-top: 15px;">
-                Online-Streitbeilegung: Verbraucher können Beschwerden an die Plattform der EU richten: <a href="http://ec.europa.eu/odr" target="_blank" style="color: #555;">http://ec.europa.eu/odr</a>
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<footer style="text-align: center; padding: 30px; background: #000; color: #333; font-size: 0.8rem; letter-spacing: 1px;">
-    &copy; 2026 ELEVATE MARKETING | PREMIUM GASTRO MARKETING WIEN
-</footer>
-
-        </div>
-   
-    <footer style="text-align: center; padding: 40px; color: #555;">&copy; 2026 ELEVATE MARKETING</footer>
-
+    </footer>
 </body>
 </html>
